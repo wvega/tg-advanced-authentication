@@ -1,5 +1,6 @@
 data/
 www/logs/*
+devdata.db
 *.pyc
 
 !www/logs/empty
