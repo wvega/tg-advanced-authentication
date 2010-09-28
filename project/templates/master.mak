@@ -108,7 +108,7 @@
           % if not request.identity:
             <li id="login" class="loginlogout"><a href="${tg.url('/login')}">Login</a></li>
           % else:
-            <li id="login" class="loginlogout"><a href="${tg.url('/logout_handler')}">Logout</a></li>
+            <li id="login" class="loginlogout"><a href="${tg.url('/logout')}">Logout</a></li>
             <li id="admin" class="loginlogout"><a href="${tg.url('/admin')}">Admin</a></li>
           % endif
       </span>

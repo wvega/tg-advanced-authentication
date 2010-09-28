@@ -8,9 +8,11 @@ from tg import expose, flash, require, url, request, redirect
 from tgext.admin.tgadminconfig import TGAdminConfig
 from tgext.admin.controller import AdminController
 
+from project import model
 from project.lib.base import BaseController
 from project.model import DBSession, metadata
 from project.controllers.error import ErrorController
+from project.controllers.secure import SecureController
 
 __all__ = ['RootController']
 
@@ -29,6 +31,9 @@ class RootController(BaseController):
     must be wrapped around with :class:`tg.controllers.WSGIAppController`.
 
     """
+    secc = SecureController()
+
+    admin = AdminController(model, DBSession, config_type=TGAdminConfig)
 
     error = ErrorController()
 
