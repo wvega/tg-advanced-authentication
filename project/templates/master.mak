@@ -12,6 +12,20 @@
   ${self.main_menu()}
   ${self.content_wrapper()}
   ${self.footer()}
+  <div id="fb-root"></div>
+    <script src="http://connect.facebook.net/en_US/all.js"></script>
+    <script>
+          FB.init({appId: YourFacebookApplicationAppId, status: true, cookie: true, xfbml: true});
+          FB.Event.subscribe('auth.sessionChange', function(response) {
+            if (response.session) {
+              // A user has logged in, and a new cookie has been saved
+              window.location.reload()
+            } else {
+              // The user has logged out, and the cookie has been cleared
+              window.location.reload()
+            }
+          });
+    </script>
 </body>
 
 <%def name="content_wrapper()">
