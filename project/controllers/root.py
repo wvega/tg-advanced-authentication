@@ -33,7 +33,11 @@ class RootController(BaseController):
     """
     secc = SecureController()
 
-    admin = AdminController(model, DBSession, config_type=TGAdminConfig)
+    admin = AdminController(model, DBSession, config_type=TGAdminConfig, 
+                            translations={ 'group_id': 'id', 
+                                           'group_name': 'name',
+                                           'permission_id': 'id',
+                                           'permission_name': 'name'})
 
     error = ErrorController()
 
